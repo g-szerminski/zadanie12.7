@@ -54,7 +54,7 @@ $(function(){
       });
       columnAddCard.click(function(event) {
         event.preventDefault();
-        self.createCard(new Card(prompt("Wpisz nazwę karty")));
+        self.createCard(new Card(prompt('Wpisz nazwę karty')));
       });
 
       // KONSTRUOWANIE ELEMENTU KOLUMNY
