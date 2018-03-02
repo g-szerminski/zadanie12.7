@@ -8,8 +8,20 @@ var board = {
 };
 
 $('.create-column')
-	.click(function(){
-		board.createColumn(new Column(prompt('Wpisz nazwę kolumny')));
+	.click(function() {
+		var columnName = prompt('Enter a column name');
+		//board.createColumn(new Column(prompt('Wpisz nazwę kolumny')));
+		$.ajax({
+			url: baseUrl + '/column',
+			method: 'POST',
+			data: {
+				name: columnName
+			},
+			succes: function(response) {
+				var column = new Column(response.id, columnName);
+				board.createColumn(column);
+			}
+		});
 	});
 	
 function initSortable() {

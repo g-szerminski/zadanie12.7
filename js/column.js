@@ -26,9 +26,9 @@ function Column(id, name) {
 				method: 'POST',
 				data: {
 				//body query
-				name: cardName,
-				bootcamp_kanban_column_id: self.id
-			},
+					name: cardName,
+					bootcamp_kanban_column_id: self.id
+				},
 			success: function(response) {
             //create a new client side card
 			var card = new Card(response.id, cardName);
