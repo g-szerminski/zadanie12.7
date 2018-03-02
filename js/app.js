@@ -43,6 +43,7 @@ function randomString() {
 }
 */
 
+/*
 // TWORZENIE NOWYCH EGZEMPLARZY KOLUMN
 var todoColumn = new Column('Do zrobienia');
 var doingColumn = new Column('W trakcie');
@@ -60,3 +61,4 @@ var card2 = new Card('stworzyc tablice kanban');
 // DODAWANIE KART DO KOLUMN
 todoColumn.createCard(card1);
 doingColumn.createCard(card2);
+*/
