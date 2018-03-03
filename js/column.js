@@ -19,13 +19,12 @@ function Column(id, name) {
 		});
 		
 		columnAddCard.click(function(event) {
-			var cardName = prompt("Enter the name of the card");
+			var cardName = prompt('Enter the name of the card');
 			event.preventDefault();
 			$.ajax({
 				url: baseUrl + '/card',
 				method: 'POST',
 				data: {
-				//body query
 					name: cardName,
 					bootcamp_kanban_column_id: self.id
 				},
@@ -41,7 +40,7 @@ function Column(id, name) {
 		column.append(columnTitle)
 			.append(columnDelete)
 			.append(columnAddCard)
-			.append(columnCardList);
+			.append(columnCardList)
 			return column;
 		}
 	}
@@ -50,12 +49,11 @@ Column.prototype = {
 	  this.element.children('ul').append(card.element);
 	},
 	deleteColumn: function() {
-	  //this.element.remove();
 		var self = this;
 		$.ajax({
 			url: baseUrl + '/column/' + self.id,
 			method: 'DELETE',
-			success: function(response){
+			success: function(response) {
 			self.element.remove();
 			}
 		});
