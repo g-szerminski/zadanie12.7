@@ -6,15 +6,13 @@ function Column(id, name) {
 	this.element = createColumn();
 
 	function createColumn() {
-		// TWORZENIE NOWYCH WĘZŁÓW
 		var column = $('<div class="column"></div>');
 		var columnTitle = $('<h2 class="column-title">' + self.name + '</h2>');
 		var columnCardList = $('<ul class="card-list"></ul>');
 		var columnDelete = $('<button class="btn-delete">x</button>');
 		var columnAddCard = $('<button class="column-add-card">Dodaj kartę</button>');
 		
-		// PODPINANIE ODPOWIEDNICH ZDARZEŃ POD WĘZŁY
-		columnDelete.click(function() {
+			columnDelete.click(function() {
 			self.deleteColumn();
 		});
 		
@@ -29,14 +27,12 @@ function Column(id, name) {
 					bootcamp_kanban_column_id: self.id
 				},
 			success: function(response) {
-            //create a new client side card
 			var card = new Card(response.id, cardName);
 			self.createCard(card);
 			}
 		});
 	});
 			
-			// KONSTRUOWANIE ELEMENTU KOLUMNY
 		column.append(columnTitle)
 			.append(columnDelete)
 			.append(columnAddCard)

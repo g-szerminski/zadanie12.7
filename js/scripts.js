@@ -1,5 +1,5 @@
 $(function(){
-
+  
   // FUNKCJE POMOCNICZE
   function initSortable() {
     $('.card-list').sortable({
@@ -41,6 +41,7 @@ $(function(){
     this.element = createColumn();
 
     function createColumn() {
+
       // TWORZENIE NOWYCH WĘZŁÓW
       var column = $('<div class="column"></div>');
       var columnTitle = $('<h2 class="column-title">' + self.name + '</h2>');

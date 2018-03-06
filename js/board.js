@@ -10,7 +10,6 @@ var board = {
 $('.create-column')
 	.click(function() {
 		var columnName = prompt('Enter a column name');
-		//board.createColumn(new Column(prompt('Wpisz nazwę kolumny')));
 		$.ajax({
 			url: baseUrl + '/column',
 			method: 'POST',
